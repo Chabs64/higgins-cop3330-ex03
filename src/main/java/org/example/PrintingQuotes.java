@@ -21,10 +21,35 @@ If your language supports string interpolation or string substitution, don’t u
 Use string concatenation instead.
  */
 
+import java.util.Scanner;
+
 public class PrintingQuotes
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Scanner in = new Scanner(System.in);
+
+        String MyQuote = getQuote(in);
+
+        String MyAuthor = getAuthor(in);
+
+        print(MyQuote, MyAuthor);
     }
+
+    private static String getAuthor(Scanner in) {
+        System.out.println("Who said it? ");
+
+        return in.nextLine();
+    }
+
+    private static String getQuote(Scanner in) {
+        System.out.println( "What is the quote? " );
+
+        return in.nextLine();
+    }
+
+    private static void print(String MyQuote, String MyAuthor) {
+        System.out.println(MyAuthor + " says, " + "\"" + MyQuote +"\"");
+    }
+
 }
